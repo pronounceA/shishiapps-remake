@@ -9,13 +9,13 @@ const RootPage: NextPage = () => {
   const router = useRouter()
 
   const setRedirectUrl = () => {
-    const redirectUrl: string =  PagePath.DASHBOARD
+    const redirectUrl: string = PagePath.DASHBOARD
     return redirectUrl
   }
 
   React.useEffect(() => {
-      const redirectUrl: string = setRedirectUrl()
-      router.push(redirectUrl)
+    const redirectUrl: string = setRedirectUrl()
+    router.push(redirectUrl)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
