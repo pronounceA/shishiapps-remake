@@ -5,6 +5,7 @@ import AppBar, { AppBarProps } from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import Toolbar from '@mui/material/Toolbar'
+import LocalLibraryTwoToneIcon from '@mui/icons-material/LocalLibraryTwoTone';
 
 const drawerWidth = 340
 
@@ -13,24 +14,18 @@ type Props = {
 
 const GlobalHeader = ({ }: Props) => {
   return (
-    <StyledAppBar position="absolute">
+    <StyledAppBar position="static">
       <Toolbar>
-        <IconButton
-          color="inherit"
-          edge="start"
-          sx={{
-            marginRight: '24px',
-          }}
-        >
-          <MenuIcon />
-        </IconButton>
-        <div style={{ flexGrow: 1 }} />
+        <LocalLibraryTwoToneIcon />
+        <div style={{ flexGrow: 1 }}>
+          shishiapps
+        </div>
       </Toolbar>
     </StyledAppBar>
   )
 }
 
-const StyledAppBar = styled(AppBar, {})<AppBarProps & {  }>(({ theme }) => ({
+const StyledAppBar = styled(AppBar, {})<AppBarProps & {}>(({ theme }) => ({
   // marginLeft: open ? drawerWidth : 0,
   // width: open ? `calc(100% - ${drawerWidth}px)` : '100%',
   zIndex: theme.zIndex.drawer + 1,
