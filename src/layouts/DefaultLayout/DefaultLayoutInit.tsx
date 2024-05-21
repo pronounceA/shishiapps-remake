@@ -4,8 +4,8 @@ import {Box,Toolbar,Container} from '@mui/material'
 import { useRouter } from 'next/router'
 
 import InitialForTest from '@/components/molecules/InitialForTest/InitialForTest'
-import GlobalHeader from 'components/organisms/Layout/GlobalHeader'
-import GlobalSidebar from 'components/organisms/Layout/GlobalSidebar'
+import GlobalHeader from '@/components/organisms/Layout/GlobalHeader'
+import GlobalSidebar from '@/components/organisms/Layout/GlobalSidebar'
 import SessionUtils from 'utils/SessionUtil/SessionUtils'
 
 
