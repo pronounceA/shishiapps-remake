@@ -14,14 +14,14 @@ import PersonIcon from '@mui/icons-material/Person'
 
 const drawerWidth = 340
 
-export type Props = {
+export interface Props {
   isOpen: boolean;
 };
 
 const GlobalSidebar = ({ isOpen }: Props) => {
   const { t } = useTranslation('layout')
 
-  const [isOpenStudentList, setIsOpenStudentList] = React.useState<boolean>(true);
+  const [isOpenStudentList, setIsOpenStudentList] = React.useState<boolean>(false);
 
   const ChangeStudentList = () => {
     setIsOpenStudentList(!isOpenStudentList);
@@ -34,10 +34,10 @@ const GlobalSidebar = ({ isOpen }: Props) => {
         <List>
           <ListItemButton onClick={ChangeStudentList}>
             <ListItemText primary='生徒' />
-            {isOpenStudentList ? <ExpandLess /> : <ExpandMore/>}
+            {isOpenStudentList ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Collapse in={isOpenStudentList} timeout={0}>
-            <List sx={{ml: 2}}>
+            <List sx={{ ml: 2 }}>
               <ListItemLink icon={<PersonIcon />} text='生徒一覧' href={PagePath.STUDENTS} />
             </List>
           </Collapse>
