@@ -15,7 +15,7 @@ const DefaultLayout = ({ children }: Props) => {
   return (
     <Box sx={{ display: 'flex', height: '100%' }}>
       <GlobalHeader />
-      <GlobalSidebar />
+      <GlobalSidebar isOpen={ true } />
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',

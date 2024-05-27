@@ -14,7 +14,7 @@ type Props = {
 
 const GlobalHeader = ({ }: Props) => {
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position="absolute">
       <Toolbar>
         <LocalLibraryTwoToneIcon />
         <div style={{ flexGrow: 1 }}>
@@ -30,7 +30,7 @@ const StyledAppBar = styled(AppBar, {})<AppBarProps & {}>(({ theme }) => ({
   // width: open ? `calc(100% - ${drawerWidth}px)` : '100%',
   zIndex: theme.zIndex.drawer + 1,
   color: theme.palette.grey[800],
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.palette.primary.main,
   boxShadow: 'none',
 
   transition: 'all 0.5s 0s ease',
