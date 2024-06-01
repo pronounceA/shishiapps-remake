@@ -14,6 +14,9 @@ type Props = {
 }
 
 const DefaultLayout = ({ children }: Props) => {
+
+  const [isOpenSidebar, setIsOpenSidebar] = React.useState(true);
+
   const router = useRouter()
   // const { SetUrlSession } = SessionUtils()
   // SetUrlSession(router.pathname)
@@ -22,7 +25,7 @@ const DefaultLayout = ({ children }: Props) => {
     <>
       <Box sx={{ display: 'flex', height: '100%' }}>
         <GlobalHeader />
-        <GlobalSidebar isOpen={true} />
+        <GlobalSidebar isOpen={isOpenSidebar} />
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
