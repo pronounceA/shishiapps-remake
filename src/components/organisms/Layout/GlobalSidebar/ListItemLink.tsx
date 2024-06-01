@@ -5,7 +5,7 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Link from 'next/link'
 
-interface Props {
+type Props = {
   icon?: React.ReactElement;
   text: string;
   href: string;

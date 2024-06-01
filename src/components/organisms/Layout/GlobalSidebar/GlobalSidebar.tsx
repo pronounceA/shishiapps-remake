@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Box from '@mui/material/Box'
 import Drawer, { DrawerProps } from '@mui/material/Drawer'
@@ -14,7 +14,7 @@ import PersonIcon from '@mui/icons-material/Person'
 
 const drawerWidth = 340
 
-export interface Props {
+export type Props = {
   isOpen: boolean;
 };
 

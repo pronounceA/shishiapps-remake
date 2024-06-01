@@ -9,7 +9,7 @@ import GlobalSidebar from '@/components/organisms/Layout/GlobalSidebar'
 // import SessionUtils from 'utils/SessionUtil/SessionUtils'
 
 
-interface Props {
+type Props = {
   children?: React.ReactNode | undefined
 }
 
