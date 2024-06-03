@@ -1,44 +1,46 @@
 import React from 'react'
 
-import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded'
 import Box from '@mui/material/Box'
 import Drawer, { DrawerProps } from '@mui/material/Drawer'
 import List from '@mui/material/List'
 import { styled } from '@mui/material/styles'
-import Typography from '@mui/material/Typography'
 import { useTranslation } from 'react-i18next'
-
-import { PagePath } from '../../../../pagePath'
-
-import DrawerHeader from './DrawerHeader'
 import ListItemLink from './ListItemLink'
+import { Collapse, ListItemButton, ListItemText, Toolbar } from '@mui/material'
+import { PagePath } from '@/pagePath'
+import ExpandLess from '@mui/icons-material/ExpandLess'
+import ExpandMore from '@mui/icons-material/ExpandMore'
+import PersonIcon from '@mui/icons-material/Person'
 
 const drawerWidth = 340
 
 export type Props = {
+  isOpen: boolean;
 };
 
-const GlobalSidebar = ({ }: Props) => {
+const GlobalSidebar = ({ isOpen }: Props) => {
   const { t } = useTranslation('layout')
 
-  return (
-    <StyledDrawer variant="permanent">
-      <DrawerHeader>
-        <Typography
-          component="h1"
-          variant="h3"
-          color="inherit"
-          background-color="inherit"
-          noWrap
-          sx={{ flexGrow: 1 }}
-        >
-          primeAI
-        </Typography>
-      </DrawerHeader>
+  const [isOpenStudentList, setIsOpenStudentList] = React.useState<boolean>(false);
 
-      <Box sx={{ flexGrow: 1, overflow: 'auto', ml: 5 }}>
+  const ChangeStudentList = () => {
+    setIsOpenStudentList(!isOpenStudentList);
+  }
+
+  return (
+    <StyledDrawer variant="permanent" open={isOpen}>
+      <Toolbar />
+      <Box sx={{ flexGrow: 1, overflow: 'auto', ml: 2 }}>
         <List>
-          <ListItemLink icon={<DashboardRoundedIcon />} text={t('sidebar.dashboard')} href={PagePath.DASHBOARD} />
+          <ListItemButton onClick={ChangeStudentList}>
+            <ListItemText primary='生徒' />
+            {isOpenStudentList ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={isOpenStudentList} timeout={0}>
+            <List sx={{ ml: 2 }}>
+              <ListItemLink icon={<PersonIcon />} text='生徒一覧' href={PagePath.STUDENTS} />
+            </List>
+          </Collapse>
         </List>
       </Box>
     </StyledDrawer>
@@ -49,6 +51,8 @@ const StyledDrawer = styled(Drawer, {})<DrawerProps>(({ theme, open }) => ({
   width: open ? drawerWidth : 0,
   flexShrink: 0,
   transition: 'all 0.5s 0s ease',
+  display: 'flex',
+
 
   '> .MuiDrawer-paper': {
     width: open ? drawerWidth : 0,

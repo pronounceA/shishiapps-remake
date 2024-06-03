@@ -7,15 +7,18 @@ import Toolbar from '@mui/material/Toolbar'
 import GlobalHeader from '@/components/organisms/Layout/GlobalHeader'
 import GlobalSidebar from '@/components/organisms/Layout/GlobalSidebar'
 
-interface Props {
-  children?: React.ReactNode | undefined
+type Props = {
+  children? : React.ReactNode | undefined
 }
 
 const DefaultLayout = ({ children }: Props) => {
+
+  const [isOpenSidebar, setIsOpenSidebar] = React.useState(true);
+
   return (
     <Box sx={{ display: 'flex', height: '100%' }}>
       <GlobalHeader />
-      <GlobalSidebar />
+      <GlobalSidebar isOpen={isOpenSidebar} />
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
