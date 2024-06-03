@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Kentaro Sato",
+      "age": 17,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "Tetsuya Kato",
+      "age": 14,
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "name": "Aya Tanaka",
+      "age": 17,
+      "gender": "femele"
+    },
+    {
+      "id": 4,
+      "name": "Shota Suzuki",
+      "age": 7,
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "name": "Ayumi Kumagai",
+      "age": 8,
+      "gender": "femele"
+    },
+    {
+      "id": 6,
+      "name": "Shiho Kaneko",
+      "age": 11,
+      "gender": "femele"
+    },
+    {
+      "id": 7,
+      "name": "Hideki Koyama",
+      "age": 12,
+      "gender": "male"
+    }
+  ]
+}
