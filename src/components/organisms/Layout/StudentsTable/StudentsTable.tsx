@@ -16,7 +16,7 @@ type Props = {
 const StudentsTable = ({ studentList }: Props) => {
   return (
     <>
-      {studentList.length !== 0 && (
+      {studentList.length !== 0 ? (
         <Box>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 800 }}>
@@ -57,8 +57,9 @@ const StudentsTable = ({ studentList }: Props) => {
           </Button>
         </Box>
         </Box>
-      )}
-      {studentList.length === 0 && (
+      )
+      :
+      (
         <Box sx={{ width: 1}}>
           <Typography>
             ※登録されている生徒データがありません。
