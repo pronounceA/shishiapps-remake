@@ -1,7 +1,6 @@
 import React from 'react'
 
 import type { NextPage } from 'next'
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, tableCellClasses } from '@mui/material'
 import { Student } from '@/@types/Types'
 import { styled } from '@mui/material'
 import fsPromises from 'fs/promises'
