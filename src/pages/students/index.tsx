@@ -15,6 +15,7 @@ type Props = {
 
 const Students: NextPage<Props> = ({ students }) => {
   const [studentList, setStudentList] = React.useState<Student[]>([]);
+  const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setStudentList(students);
@@ -22,7 +23,7 @@ const Students: NextPage<Props> = ({ students }) => {
 
   return (
     <>
-      <StudentsTable studentList={ studentList } />
+      <StudentsTable studentList={studentList} />
     </>
   )
 }
