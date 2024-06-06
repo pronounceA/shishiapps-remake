@@ -4,43 +4,71 @@
       "id": 1,
       "name": "Kentaro Sato",
       "age": 17,
-      "gender": "male"
+      "gender": "male",
+      "personalInfo": {
+        "tel": "07097237776",
+        "address": "京都府八幡市美濃山大塚49番地10号"
+      }
     },
     {
       "id": 2,
       "name": "Tetsuya Kato",
       "age": 14,
-      "gender": "male"
+      "gender": "male",
+      "personalInfo": {
+        "tel": "07089355252",
+        "address": "大阪府南河内郡太子町聖和台3丁目499番地1号"
+      }
     },
     {
       "id": 3,
       "name": "Aya Tanaka",
       "age": 17,
-      "gender": "femele"
+      "gender": "femele",
+      "personalInfo": {
+        "tel": "07089355252",
+        "address": "岡山県真庭市杉山408番地19号"
+      }
     },
     {
       "id": 4,
       "name": "Shota Suzuki",
       "age": 7,
-      "gender": "male"
+      "gender": "male",
+      "personalInfo": {
+        "tel": "07057057071",
+        "address": "富山県富山市吉野867番地12号"
+      }
     },
     {
       "id": 5,
       "name": "Ayumi Kumagai",
       "age": 8,
-      "gender": "femele"
+      "gender": "femele",
+      "personalInfo": {
+        "tel": "07058990990",
+        "address": "香川県綾歌郡宇多津町浜七番丁984番地8号"
+      }
     },
     {
       "id": 6,
       "name": "Shiho Kaneko",
       "age": 11,
-      "gender": "femele"
+      "gender": "femele",
+      "personalInfo": {
+        "tel": "07067238565",
+        "address": "滋賀県野洲市大畑882番地1号"
+      }
     },
     {
       "id": 7,
       "name": "Hideki Koyama",
       "age": 12,
-      "gender": "male"
+      "gender": "male",
+      "personalInfo": {
+        "tel": "07057754833",
+        "address": "奈良県吉野郡下市町田中13番地19号"
+      }
     }
   ]
 }
