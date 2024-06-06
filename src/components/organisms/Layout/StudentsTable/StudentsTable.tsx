@@ -5,9 +5,10 @@ import StyledTableCell from './StyledTableCell'
 import { Box, Typography } from '@mui/material'
 
 type Props = {
-  studentList: Student[]
+  studentList: Student[],
+  switchModal: (bool:boolean) => void,
 }
-const StudentsTable = ({ studentList }: Props) => {
+const StudentsTable = ({ studentList, switchModal }: Props) => {
   return (
     <>
       {studentList.length !== 0 ? (
@@ -38,7 +39,7 @@ const StudentsTable = ({ studentList }: Props) => {
                     <StyledTableCell>
                     </StyledTableCell>
                     <StyledTableCell>
-                      <Button variant='contained'>詳細</Button>
+                      <Button variant='contained' onClick={() => switchModal(true)}>詳細</Button>
                     </StyledTableCell>
                   </TableRow>
                 ))}

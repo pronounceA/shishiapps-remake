@@ -1,15 +1,19 @@
 import { Box, Modal, Typography } from '@mui/material'
 import React from 'react'
 
-const StudentUpdateModal = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+type Props = {
+  isOpen: boolean,
+  switchModal: (bool: boolean) => void,
+}
 
+const StudentUpdateModal = ({ isOpen, switchModal }: Props) => {
+  const handleClose = () => {
+    switchModal(false);
+  }
   return (
     <>
       <Modal
-        open={open}
+        open={isOpen}
         onClose={handleClose}
         area-labelledby='modal-student-update-title'
         area-describedby='modal-student-update-description'

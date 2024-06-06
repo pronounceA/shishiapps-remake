@@ -6,6 +6,7 @@ import { styled } from '@mui/material'
 import fsPromises from 'fs/promises'
 import path from 'path'
 import StudentsTable from '@/components/organisms/Layout/StudentsTable'
+import StudentUpdateModal from '@/components/organisms/Layout/StudentUpdateModal/StudentUpdateModal'
 
 // import DefaultLayout from '@/layouts/DefaultLayout'
 
@@ -17,13 +18,18 @@ const Students: NextPage<Props> = ({ students }) => {
   const [studentList, setStudentList] = React.useState<Student[]>([]);
   const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false);
 
+  const switchUpdateModal = (bool: boolean) => {
+    setIsOpenUpdateModal(bool);
+  }
+
   React.useEffect(() => {
     setStudentList(students);
   }, [])
 
   return (
     <>
-      <StudentsTable studentList={studentList} />
+      <StudentsTable studentList={studentList} switchModal={switchUpdateModal} />
+      <StudentUpdateModal isOpen={isOpenUpdateModal} switchModal={switchUpdateModal} />
     </>
   )
 }
