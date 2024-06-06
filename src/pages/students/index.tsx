@@ -17,6 +17,7 @@ type Props = {
 const Students: NextPage<Props> = ({ students }) => {
   const [studentList, setStudentList] = React.useState<Student[]>([]);
   const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false);
+  const [clickedStudent, setClickedStudent] = React.useState<Student | null>(null);
 
   const switchUpdateModal = (bool: boolean) => {
     setIsOpenUpdateModal(bool);
@@ -28,8 +29,12 @@ const Students: NextPage<Props> = ({ students }) => {
 
   return (
     <>
-      <StudentsTable studentList={studentList} switchModal={switchUpdateModal} />
-      <StudentUpdateModal isOpen={isOpenUpdateModal} switchModal={switchUpdateModal} />
+      <StudentsTable studentList={studentList} switchModal={switchUpdateModal} setClickedStudent={setClickedStudent} />
+      <StudentUpdateModal
+        isOpen={isOpenUpdateModal}
+        switchModal={switchUpdateModal}
+        clickedStudent={clickedStudent}
+      />
     </>
   )
 }

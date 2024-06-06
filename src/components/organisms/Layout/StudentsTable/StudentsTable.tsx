@@ -6,9 +6,10 @@ import { Box, Typography } from '@mui/material'
 
 type Props = {
   studentList: Student[],
-  switchModal: (bool:boolean) => void,
+  switchModal: (bool: boolean) => void,
+  setClickedStudent: React.Dispatch<React.SetStateAction<Student | null>>
 }
-const StudentsTable = ({ studentList, switchModal }: Props) => {
+const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) => {
   return (
     <>
       {studentList.length !== 0 ? (
@@ -39,7 +40,12 @@ const StudentsTable = ({ studentList, switchModal }: Props) => {
                     <StyledTableCell>
                     </StyledTableCell>
                     <StyledTableCell>
-                      <Button variant='contained' onClick={() => switchModal(true)}>詳細</Button>
+                      <Button variant='contained' onClick={() => {
+                        switchModal(true);
+                        setClickedStudent(student);
+                      }}>
+                        詳細
+                      </Button>
                     </StyledTableCell>
                   </TableRow>
                 ))}
