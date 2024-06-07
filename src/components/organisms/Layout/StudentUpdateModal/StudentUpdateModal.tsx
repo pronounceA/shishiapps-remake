@@ -1,4 +1,5 @@
 import { Student } from '@/@types/Types'
+import ModalDescription from '@/components/molecules/Layout/ModalDescription/ModalDescription'
 import { Box, Modal, Typography } from '@mui/material'
 import React from 'react'
 
@@ -24,9 +25,7 @@ const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent }: Props) => {
           <Typography id='modal-student-update-title' variant='h4' component='h3'>
             生徒情報更新
           </Typography>
-          <Typography id='modal-student-update-description' variant='h5' sx={{ mt: 2 }}>
-            description
-          </Typography>
+          <ModalDescription />
         </Box>
       </Modal>
     </>
