@@ -14,7 +14,7 @@ type Props = {
 
 const GlobalHeader = ({ }: Props) => {
   return (
-    <StyledAppBar position="absolute">
+    <StyledAppBar position="fixed">
       <Toolbar>
         <LocalLibraryTwoToneIcon />
         <div style={{ flexGrow: 1 }}>
