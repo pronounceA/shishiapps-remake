@@ -6,10 +6,14 @@ import React from 'react'
 type Props = {
   isOpen: boolean,
   switchModal: (bool: boolean) => void,
-  clickedStudent: Student | null,
+  clickedStudent: Student | undefined,
+  studentList: Student[],
+  setStudentList: React.Dispatch<React.SetStateAction<Student[]>>
+  id: number,
+  setId: React.Dispatch<React.SetStateAction<number>>
 }
 
-const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent }: Props) => {
+const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent, studentList, setStudentList, id, setId }: Props) => {
   const handleClose = () => {
     switchModal(false);
   }
@@ -25,7 +29,13 @@ const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent }: Props) => {
           <Typography id='modal-student-update-title' variant='h4' component='h3'>
             生徒情報更新
           </Typography>
-          <ModalDescription />
+          <ModalDescription
+            student={clickedStudent}
+            studentList={studentList}
+            setStudentList={setStudentList}
+            id={id}
+            setId={setId}
+          />
         </Box>
       </Modal>
     </>

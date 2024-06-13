@@ -7,7 +7,7 @@ import { Box, Typography } from '@mui/material'
 type Props = {
   studentList: Student[],
   switchModal: (bool: boolean) => void,
-  setClickedStudent: React.Dispatch<React.SetStateAction<Student | null>>
+  setClickedStudent: React.Dispatch<React.SetStateAction<Student | undefined>>
 }
 const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) => {
   return (

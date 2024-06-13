@@ -15,16 +15,18 @@ type Props = {
 }
 
 const Students: NextPage<Props> = ({ students }) => {
-  const [studentList, setStudentList] = React.useState<Student[]>([]);
-  const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false);
-  const [clickedStudent, setClickedStudent] = React.useState<Student | null>(null);
+  const [studentList, setStudentList] = React.useState<Student[]>([])
+  const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false)
+  const [clickedStudent, setClickedStudent] = React.useState<Student | undefined>(undefined)
+  const [id, setId] = React.useState<number>(0)
 
   const switchUpdateModal = (bool: boolean) => {
-    setIsOpenUpdateModal(bool);
+    setIsOpenUpdateModal(bool)
   }
 
   React.useEffect(() => {
     setStudentList(students);
+    setId(students.length)
   }, [])
 
   return (
@@ -34,6 +36,10 @@ const Students: NextPage<Props> = ({ students }) => {
         isOpen={isOpenUpdateModal}
         switchModal={switchUpdateModal}
         clickedStudent={clickedStudent}
+        studentList={studentList}
+        setStudentList={setStudentList}
+        id={id}
+        setId={setId}
       />
     </>
   )
