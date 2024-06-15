@@ -130,7 +130,7 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
               :
               ''}
           onChange={inputName}
-          sx={{ width: 1 / 2, mt: 3 }}
+          sx={{ mt: 3 }}
         />
         <TextField
           select
@@ -141,7 +141,7 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
           defaultValue={student ? student.age : ''}
           error={hasAgeError}
           helperText={hasAgeError ? '年齢が未入力です。' : ''}
-          sx={{ width: 1 / 2, mt: 3 }}
+          sx={{  mt: 3 }}
           onChange={inputAge}
         >
           {
@@ -177,7 +177,7 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
             />
           </RadioGroup>
         </FormControl>
-        <Button variant='contained' type='submit' sx={{ mt: 2, width: 1 }}>
+        <Button variant='contained' type='submit' sx={{ mt: 2}}>
           送信
         </Button>
       </Stack>

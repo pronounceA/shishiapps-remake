@@ -26,6 +26,7 @@ const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent, studentList, 
         onClose={handleClose}
         area-labelledby='modal-student-update-title'
         area-describedby='modal-student-update-description'
+        sx={{}}
       >
         <Box sx={modalStyle}>
           <Typography id='modal-student-update-title' variant='h4' component='h3'>
@@ -52,12 +53,13 @@ const modalStyle = ({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 1 / 2,
+  maxWidth: '630px',
   minHeight: 1 / 2,
   bgcolor: 'background.paper',
   boxShadow: 24,
   pt: 2,
   px: 4,
-  pb: 3
+  pb: 3,
 });
 
 export default StudentUpdateModal
