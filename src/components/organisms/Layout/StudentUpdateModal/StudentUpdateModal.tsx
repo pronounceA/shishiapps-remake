@@ -5,18 +5,20 @@ import React from 'react'
 
 type Props = {
   isOpen: boolean,
-  switchModal: (bool: boolean) => void,
+  switchModal: React.Dispatch<React.SetStateAction<boolean>>,
   clickedStudent: Student | undefined,
   studentList: Student[],
   setStudentList: React.Dispatch<React.SetStateAction<Student[]>>
   id: number,
   setId: React.Dispatch<React.SetStateAction<number>>
+  setIsDisplayAlert: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent, studentList, setStudentList, id, setId }: Props) => {
+const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent, studentList, setStudentList, id, setId, setIsDisplayAlert }: Props) => {
   const handleClose = () => {
-    switchModal(false);
+    switchModal(false)
   }
+
   return (
     <>
       <Modal
@@ -35,6 +37,8 @@ const StudentUpdateModal = ({ isOpen, switchModal, clickedStudent, studentList, 
             setStudentList={setStudentList}
             id={id}
             setId={setId}
+            switchModal={switchModal}
+            setIsDisplayAlert={setIsDisplayAlert}
           />
         </Box>
       </Modal>

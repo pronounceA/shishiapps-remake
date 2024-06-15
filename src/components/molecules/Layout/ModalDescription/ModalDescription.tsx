@@ -4,13 +4,15 @@ import React from 'react'
 
 export type Props = {
   student?: Student,
-  studentList: Student[]
-  setStudentList: React.Dispatch<React.SetStateAction<Student[]>>
+  studentList: Student[],
+  setStudentList: React.Dispatch<React.SetStateAction<Student[]>>,
   id: number,
-  setId: React.Dispatch<React.SetStateAction<number>>
+  setId: React.Dispatch<React.SetStateAction<number>>,
+  switchModal: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsDisplayAlert: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-const ModalDescription = ({ student, studentList, setStudentList, id, setId }: Props) => {
+const ModalDescription = ({ student, studentList, setStudentList, id, setId, switchModal, setIsDisplayAlert }: Props) => {
   const [editedStudent, setEditedStudent] = React.useState<Student | undefined>(student)
   const [hasNameError, setHasNameError] = React.useState<boolean>(false)
   const [hasAgeError, setHasAgeError] = React.useState<boolean>(false)
@@ -19,6 +21,8 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId }: P
   const clickSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     changeStudents()
+    switchModal(false)
+    setIsDisplayAlert(true)
   }
 
   const inputName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -114,7 +118,7 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId }: P
           error={hasNameError || nameLengthError}
           helperText={hasNameError ? (
             <>
-              名前を入力してください。<br />
+              名前を入力してください。
             </>
           )
             :
@@ -122,7 +126,9 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId }: P
               <>
                 名前を短くしてください。
               </>
-            ) : ''}
+            )
+              :
+              ''}
           onChange={inputName}
           sx={{ width: 1 / 2, mt: 3 }}
         />

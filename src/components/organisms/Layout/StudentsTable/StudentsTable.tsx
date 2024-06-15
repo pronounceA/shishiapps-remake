@@ -13,7 +13,7 @@ const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) =
   return (
     <>
       {studentList.length !== 0 ? (
-        <Box>
+        <Box sx={{ mt: 2}}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 800 }}>
               <TableHead>
@@ -61,7 +61,7 @@ const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) =
       )
         :
         (
-          <Box sx={{ width: 1 }}>
+          <Box sx={{ width: 1, mt: 2 }}>
             <Typography>
               ※登録されている生徒データがありません。
             </Typography>
