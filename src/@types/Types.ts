@@ -3,10 +3,5 @@ export type Student = {
   name: string,
   age: number,
   gender: string,
-  perdonInfo: PersonalInfo,
 }
 
-export type PersonalInfo = {
-  tel: string,
-  address: string,
-}
