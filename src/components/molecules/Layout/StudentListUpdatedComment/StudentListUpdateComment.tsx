@@ -9,7 +9,7 @@ type Props = {
 const StudentListUpdateComment = ({ id }: Props) => {
   return (
     <Alert icon={<CheckIcon fontSize='inherit' />} severity='success' variant='filled'>
-      生徒情報を更新しました。 ID={id}
+      生徒情報を更新しました。 id={id}
     </Alert>
   )
 }
