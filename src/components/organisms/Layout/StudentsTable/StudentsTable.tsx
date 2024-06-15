@@ -5,13 +5,15 @@ import StyledTableCell from './StyledTableCell'
 import { Box, Typography } from '@mui/material'
 
 type Props = {
-  studentList: Student[]
+  studentList: Student[],
+  switchModal: (bool: boolean) => void,
+  setClickedStudent: React.Dispatch<React.SetStateAction<Student | undefined>>
 }
-const StudentsTable = ({ studentList }: Props) => {
+const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) => {
   return (
     <>
       {studentList.length !== 0 ? (
-        <Box>
+        <Box sx={{ mt: 2}}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 800 }}>
               <TableHead>
@@ -38,7 +40,12 @@ const StudentsTable = ({ studentList }: Props) => {
                     <StyledTableCell>
                     </StyledTableCell>
                     <StyledTableCell>
-                      <Button variant='contained'>詳細</Button>
+                      <Button variant='contained' onClick={() => {
+                        switchModal(true);
+                        setClickedStudent(student);
+                      }}>
+                        詳細
+                      </Button>
                     </StyledTableCell>
                   </TableRow>
                 ))}
@@ -54,7 +61,7 @@ const StudentsTable = ({ studentList }: Props) => {
       )
         :
         (
-          <Box sx={{ width: 1 }}>
+          <Box sx={{ width: 1, mt: 2 }}>
             <Typography>
               ※登録されている生徒データがありません。
             </Typography>
