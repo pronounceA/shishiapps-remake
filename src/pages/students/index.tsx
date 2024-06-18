@@ -16,8 +16,6 @@ type Props = {
   students: Student[]
 }
 
-console.log('page render')
-
 const Students: NextPage<Props> = ({ students }) => {
   const [studentList, setStudentList] = React.useState<Student[]>([])
   const [isOpenUpdateModal, setIsOpenUpdateModal] = React.useState<boolean>(false)

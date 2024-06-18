@@ -32,12 +32,9 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
     const editedStudentOrt = { ...editedStudent! }
 
     editedStudentOrt.name = inputValue
-    console.log('editedStudentOrt', editedStudentOrt)
-    console.log('editStudent', editedStudent)
     setEditedStudent(editedStudentOrt)
     setHasNameError(isEmpty)
     setNameLengthError(lengthOver)
-    console.log('nameValue', editedStudentOrt.name)
   }
 
   const inputAge = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,17 +43,14 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
 
     editedStudentOrt.age = parseInt(inputValue)
     setEditedStudent(editedStudentOrt)
-    console.log('ageValue', editedStudentOrt.age)
   }
 
   const changeGender = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value
     const editedStudentOrt = { ...editedStudent! }
-    console.log('value', event.target.value)
 
     editedStudentOrt.age = parseInt(inputValue)
     setEditedStudent(editedStudentOrt)
-    console.log('ageValue', editedStudentOrt.age)
   }
 
   const validateStudent = (): boolean => {
@@ -66,34 +60,24 @@ const ModalDescription = ({ student, studentList, setStudentList, id, setId, swi
     setHasNameError(nameBlankValidate)
     setHasAgeError(ageValidate)
     setNameLengthError(nameLengthValidate)
-    console.log('namelength', editedStudent!.name.length)
-    console.log('hasNameError', hasNameError)
-    console.log('hasAgeError', hasAgeError)
     return nameBlankValidate || nameLengthValidate || ageValidate
   }
 
   const changeStudents = () => {
-    console.log('cs start')
     if (validateStudent()) return
-    console.log('through validate')
-
     const editedStudentOrta = { ...editedStudent! }
     const studentListOrta = studentList.concat()
-    console.log('editedStudentOrta', editedStudentOrta)
 
     if (editedStudent!.id === 0) {
-      console.log('through if (editedStudent.id === 0)')
       editedStudentOrta.id = id
       setId(id + 1)
     }
 
     studentListOrta.map((stu, i) => {
       const existsInStudentList = stu.id === editedStudentOrta.id
-      console.log(`existsInStudent${i}回目`, stu.id === editedStudentOrta.id)
       if (existsInStudentList) {
         studentListOrta[i] = editedStudentOrta
         setStudentList(studentListOrta)
-        console.log(studentListOrta)
         return
       }
     })

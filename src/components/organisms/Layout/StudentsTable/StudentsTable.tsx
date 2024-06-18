@@ -9,6 +9,7 @@ type Props = {
   switchModal: (bool: boolean) => void,
   setClickedStudent: React.Dispatch<React.SetStateAction<Student | undefined>>
 }
+
 const StudentsTable = ({ studentList, switchModal, setClickedStudent }: Props) => {
   return (
     <>
